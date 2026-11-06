@@ -22,7 +22,7 @@ from random import randint
 from library import LecteurAudio
 
 # Fichiers disponibles
-FICHIERS_AUDIO = ["test_audio.flac", "test_audio.mp3"]
+FICHIERS_AUDIO = ["test_audio2.flac", "test_audio.mp3"]
 
 def test_lecteur_audio() -> None:
     """
