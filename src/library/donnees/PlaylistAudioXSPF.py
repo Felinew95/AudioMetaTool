@@ -51,11 +51,11 @@ class PlaylistAudioXSPF:
         assert nom, "Le nom de la playlist ne peut pas être vide"
         assert chemin_playlist, "Le chemin de la playlist ne peut pas être vide"
 
-        self._nom = nom
-        self._chemin_playlist = chemin_playlist
-        self._nombre_pistes = 0
-        self._duree_totale = 0
-        self._pistes = []
+        self._nom: str = nom
+        self._chemin_playlist: str = chemin_playlist
+        self._nombre_pistes: int = 0
+        self._duree_totale: float|int = 0
+        self._pistes: list[PisteAudio] = []
 
     def __str__(self) -> str:
         """
@@ -65,14 +65,14 @@ class PlaylistAudioXSPF:
                  et la description de chacune de ses pistes.
         """
         # Informations de la playlist
-        aff = "==== " + self._nom + " ====\n\n"
+        aff: str = "==== " + self._nom + " ====\n\n"
         aff += "Chemin : " + self._chemin_playlist + "\n"
         aff += "Nombre de pistes : " + str(self._nombre_pistes) + "\n"
         aff += "Durée totale : " + str(self._duree_totale) + " sec\n\n"
 
         # Affichage des pistes
         for i in range(self._nombre_pistes):
-            aff += f"== Piste {i} ==\n" + str(self._pistes[i]) + "\n"
+            aff += f"== Piste {i+1} ==\n" + str(self._pistes[i]) + "\n"
 
         return aff
 
@@ -184,8 +184,8 @@ class PlaylistAudioXSPF:
         self._pistes.append(piste)
 
     # Définition des propriétés
-    nom = property(_get_nom, _set_nom)
-    chemin_playlist = property(_get_chemin_playlist, _set_chemin_playlist)
-    nombre_pistes = property(_get_nombre_pistes, _set_nombre_pistes)
-    duree_totale = property(_get_duree_totale, _set_duree_totale)
-    pistes = property(_get_pistes)
+    nom: property = property(_get_nom, _set_nom)
+    chemin_playlist: property = property(_get_chemin_playlist, _set_chemin_playlist)
+    nombre_pistes: property = property(_get_nombre_pistes, _set_nombre_pistes)
+    duree_totale: property = property(_get_duree_totale, _set_duree_totale)
+    pistes: property = property(_get_pistes)

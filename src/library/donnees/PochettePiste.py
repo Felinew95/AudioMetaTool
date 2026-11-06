@@ -44,11 +44,10 @@ class PochettePiste:
 
         :return: None. Aucune valeur n'est retournée.
         """
-        assert donnees, "Les données de la pochette ne peuvent pas être vides"
         assert format_pochette, "Le format de la pochette ne peut pas être vide"
 
-        self._donnees = donnees
-        self._format_pochette = format_pochette
+        self._donnees: bytes = donnees
+        self._format_pochette: str = format_pochette
 
     def __str__(self) -> str:
         """
@@ -94,8 +93,6 @@ class PochettePiste:
 
         :raise ValueError: Si les données de l'image sont vides.
         """
-        if not donnees:
-            raise ValueError("L'image ne peut pas être vide.")
         self._donnees = donnees
 
     def _get_format_pochette(self) -> str:
@@ -120,5 +117,5 @@ class PochettePiste:
         self._format_pochette = format_pochette
 
     # Définition des propriétés
-    donnees = property(_get_donnees, _set_donnees)
-    format_pochette = property(_get_format_pochette, _set_format_pochette)
+    donnees: property = property(_get_donnees, _set_donnees)
+    format_pochette: property = property(_get_format_pochette, _set_format_pochette)

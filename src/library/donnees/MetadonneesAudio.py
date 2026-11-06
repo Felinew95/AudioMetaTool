@@ -67,15 +67,15 @@ class MetadonneesAudio:
         assert artiste_album, "L'artiste de l'album ne peut pas être vide."
         assert compositeur, "Le compositeur ne peut pas être vide."
 
-        self._titre = titre
-        self._artiste = artiste
-        self._album = album
-        self._genre = genre
-        self._annee = annee
-        self._num_piste = num_piste
-        self._duree = duree
-        self._artiste_album = artiste_album
-        self._compositeur = compositeur
+        self._titre: str = titre
+        self._artiste: str = artiste
+        self._album: str = album
+        self._genre: str = genre
+        self._annee: int = annee
+        self._num_piste: int = num_piste
+        self._duree: float|int = duree
+        self._artiste_album: str = artiste_album
+        self._compositeur: str = compositeur
 
     def __str__(self) -> str:
         """
@@ -308,12 +308,12 @@ class MetadonneesAudio:
         self._compositeur = compositeur
 
     # Définition des propriétés
-    titre = property(_get_titre, _set_titre)
-    artiste = property(_get_artiste, _set_artiste)
-    album = property(_get_album, _set_album)
-    genre = property(_get_genre, _set_genre)
-    annee = property(_get_annee, _set_annee)
-    num_piste = property(_get_num_piste, _set_num_piste)
-    duree = property(_get_duree, _set_duree)
-    artiste_album = property(_get_artiste_album, _set_artiste_album)
-    compositeur = property(_get_compositeur, _set_compositeur)
+    titre: property = property(_get_titre, _set_titre)
+    artiste: property = property(_get_artiste, _set_artiste)
+    album: property = property(_get_album, _set_album)
+    genre: property = property(_get_genre, _set_genre)
+    annee: property = property(_get_annee, _set_annee)
+    num_piste: property = property(_get_num_piste, _set_num_piste)
+    duree: property = property(_get_duree, _set_duree)
+    artiste_album: property = property(_get_artiste_album, _set_artiste_album)
+    compositeur:property = property(_get_compositeur, _set_compositeur)

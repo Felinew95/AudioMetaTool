@@ -21,4 +21,3 @@ from .MetadonneesAudio import MetadonneesAudio
 from .PisteAudio import PisteAudio
 from .PlaylistAudioXSPF import PlaylistAudioXSPF
 from .PochettePiste import PochettePiste
-from .LecteurAudio import LecteurAudio

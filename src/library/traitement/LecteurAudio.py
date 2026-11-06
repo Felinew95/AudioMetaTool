@@ -24,7 +24,11 @@ Version : 1.2
 
 # Importation des modules
 import pygame
+
 from threading import Thread
+from pygame.time import Clock
+from config import FREQUENCE_RAFRAICHISSEMENT
+
 
 class LecteurAudio(Thread):
     """
@@ -37,7 +41,6 @@ class LecteurAudio(Thread):
     :pre: La bibliothèque pygame doit être installée.
     :pre: Le fichier audio doit être accessible et dans un format pris en charge.
     """
-    FREQUENCE_RAFRAICHISSEMENT = 10
 
     def __init__(self, fichier: str) -> None:
         """
@@ -47,7 +50,7 @@ class LecteurAudio(Thread):
         :return: Aucun retour.
         """
         super().__init__()
-        self._fichier = fichier
+        self._fichier: str = fichier
 
         # Initialisation du mixer audio
         pygame.mixer.init()
@@ -76,10 +79,10 @@ class LecteurAudio(Thread):
         pygame.mixer.music.play()
 
         # Lecture du fichier
-        horloge = pygame.time.Clock()
+        horloge: Clock = Clock()
         while pygame.mixer.music.get_busy():
             # Rafraichissement de la lecture
-            horloge.tick(self.FREQUENCE_RAFRAICHISSEMENT)
+            horloge.tick(FREQUENCE_RAFRAICHISSEMENT)
 
     def pause(self) -> None:
         """

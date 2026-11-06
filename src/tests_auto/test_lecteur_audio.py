@@ -18,11 +18,9 @@ Version : 1.0
 """
 
 # Importation des modules
-from random import randint
+from random import choice
+from config import FICHIERS_AUDIO
 from library import LecteurAudio
-
-# Fichiers disponibles
-FICHIERS_AUDIO = ["test_audio2.flac", "test_audio.mp3"]
 
 def test_lecteur_audio() -> None:
     """
@@ -34,7 +32,7 @@ def test_lecteur_audio() -> None:
     :return: None
     """
     # Choix du fichier audio
-    fichier_test = FICHIERS_AUDIO[randint(0, len(FICHIERS_AUDIO) - 1)]
+    fichier_test = choice(FICHIERS_AUDIO)
 
     # Lecture du fichier audio
     lecteur = LecteurAudio(fichier=fichier_test)

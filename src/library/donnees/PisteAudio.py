@@ -52,10 +52,10 @@ class PisteAudio:
         assert chemin_fichier, "Le chemin du fichier ne peut pas être vide"
         assert taille >= 0, "La taille du fichier ne peut pas être négatif"
 
-        self._chemin_fichier = chemin_fichier
-        self._taille = taille
-        self._metadonnees = metadonnees
-        self._pochette = pochette
+        self._chemin_fichier: str = chemin_fichier
+        self._taille: float|int = taille
+        self._metadonnees: MetadonneesAudio = metadonnees
+        self._pochette: PochettePiste = pochette
 
     def __str__(self) -> str:
         """
@@ -65,7 +65,7 @@ class PisteAudio:
                  et la pochette du fichier audio.
         """
         aff = "\nChemin du fichier : " + self._chemin_fichier
-        aff += "\nTaille : " + str(self._taille) + " ko\n"
+        aff += "\nTaille : " + str(self._taille) + " Mo\n"
         aff += ("\n-- Méta-données -- \n" + str(self._metadonnees)
             + "\n" + 18*"-" + "\n")
         aff += ("\n-- Pochette -- \n" + str(self._pochette)
@@ -169,7 +169,7 @@ class PisteAudio:
         self._pochette = pochette
 
     # Définition des propriétés
-    chemin_fichier = property(_get_chemin_fichier, _set_chemin_fichier)
-    taille = property(_get_taille, _set_taille)
-    metadonnees = property(_get_metadonnees, _set_metadonnees)
-    pochette = property(_get_pochette, _set_pochette)
+    chemin_fichier: property = property(_get_chemin_fichier, _set_chemin_fichier)
+    taille: property = property(_get_taille, _set_taille)
+    metadonnees: property = property(_get_metadonnees, _set_metadonnees)
+    pochette: property = property(_get_pochette, _set_pochette)
