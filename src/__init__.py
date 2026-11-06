@@ -7,8 +7,8 @@ Regroupe l'ensemble du code source de l'application :
 - gui     : interface graphique
 - tests_auto : tests automatiques
 
-Auteur : <Nassim / Nassim, Alexandre et Menouer>
+Auteurs : Nassim Berrandou, Alexandre Burin, Menaouer Ammari
 Version : 1.0
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0"

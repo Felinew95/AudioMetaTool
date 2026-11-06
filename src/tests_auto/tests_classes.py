@@ -12,8 +12,8 @@ Auteur : Alexandre BURIN
 Version : 1.0
 """
 
+# Importation des modules
 import pandas as pd
-
 from src.library.donnees import (
     MetadonneesAudio,
     PisteAudio,
@@ -21,8 +21,7 @@ from src.library.donnees import (
     PochettePiste,
 )
 
-
-def creer_playlist_csv(fichier: str = "tests-classes.csv") -> PlaylistAudioXSPF:
+def creer_playlist_csv(fichier: str = "tests_classes.csv") -> PlaylistAudioXSPF:
     """
     Crée une playlist audio à partir des données d'un fichier CSV.
 

@@ -6,5 +6,6 @@ Contient les classes et fonctions indépendantes de toute interface
 métadonnées, exploration de dossiers, génération de playlists XSPF.
 """
 
+# Importation des modules
 from .donnees import *
 from .traitement import *
