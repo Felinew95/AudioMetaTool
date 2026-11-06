@@ -23,9 +23,9 @@ Auteur : Alexandre BURIN
 Version : 1.1
 """
 
+# Importation des modules
 from src.library.donnees.MetadonneesAudio import MetadonneesAudio
 from src.library.donnees.PochettePiste import PochettePiste
-
 
 class PisteAudio:
     """
