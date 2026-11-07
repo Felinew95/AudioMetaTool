@@ -27,7 +27,7 @@ import pygame
 
 from threading import Thread
 from pygame.time import Clock
-from config import FREQUENCE_RAFRAICHISSEMENT
+from src.config import FREQUENCE_RAFRAICHISSEMENT
 
 
 class LecteurAudio(Thread):

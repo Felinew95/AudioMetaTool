@@ -6,17 +6,24 @@ d'extraire leurs métadonnées et leurs pochettes, ainsi que de centraliser
 leur traitement.
 
 Classes exportées :
-    - ExplorateurFichiersAudio : exploration et recherche des fichiers audio.
-    - ExtracteurMetadonnees : extraction des métadonnées audio.
-    - ExtracteurPochetteAudio : extraction des pochettes associées aux pistes.
-    - TraitementAudio : gestion du traitement des fichiers audio.
+    - ExplorateurAudio       : exploration et recherche des fichiers audio.
+    - PisteAudioBuilder      : construction des objets PisteAudio.
+    - PlaylistAudioXSPFBuilder : construction des playlists XSPF.
+    - LecteurAudio           : lecture des fichiers audio.
+    - SerialiseurXSPF        : sérialisation au format XSPF.
 
-Auteur : Alexandre BURIN
-Version : 1.0
+Historique des versions :
+    - 1.0 : Création du package et exportation des classes principales.
+    - 1.1 : Ajout de l'exportation de LecteurAudio.
+    - 1.2 : Ajout de l'exportation de SerialiseurXSPF (sérialisation
+            des playlists au format XSPF).
+
+Auteurs : Alexandre BURIN, Nassim BERRANDOU
+Version : 1.2
 """
 
-# Importation des modules
 from .ExplorateurAudio import ExplorateurAudio
 from .PisteAudioBuilder import PisteAudioBuilder
 from .PlaylistAudioXSPFBuilder import PlaylistAudioXSPFBuilder
 from .LecteurAudio import LecteurAudio
+from .SerialiseurXSPF import SerialiseurXSPF

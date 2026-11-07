@@ -24,22 +24,29 @@ Version : 1.1
 """
 
 # Importation des modules
-from library.donnees import MetadonneesAudio, PochettePiste
+from src.library.donnees.MetadonneesAudio import MetadonneesAudio
+from src.library.donnees.PochettePiste import PochettePiste
+
 
 class PisteAudio:
     """
     Représente un fichier audio et regroupe ses principales informations.
-    
+
     La classe stocke le chemin d'accès, la taille, les métadonnées
     textuelles et la pochette du fichier audio. Les propriétés permettent
     d'accéder aux attributs internes et de les modifier de manière contrôlée.
-    
+
     Auteur : Alexandre BURIN
     Version : 1.1
     """
 
-    def __init__(self, chemin_fichier: str, taille: float|int,
-                 metadonnees: MetadonneesAudio, pochette: PochettePiste) -> None:
+    def __init__(
+        self,
+        chemin_fichier: str,
+        taille: float | int,
+        metadonnees: MetadonneesAudio,
+        pochette: PochettePiste,
+    ) -> None:
         """
         Initialise les informations du fichier audio.
 
@@ -53,7 +60,7 @@ class PisteAudio:
         assert taille >= 0, "La taille du fichier ne peut pas être négatif"
 
         self._chemin_fichier: str = chemin_fichier
-        self._taille: float|int = taille
+        self._taille: float | int = taille
         self._metadonnees: MetadonneesAudio = metadonnees
         self._pochette: PochettePiste = pochette
 
@@ -66,10 +73,10 @@ class PisteAudio:
         """
         aff = "\nChemin du fichier : " + self._chemin_fichier
         aff += "\nTaille : " + str(self._taille) + " Mo\n"
-        aff += ("\n-- Méta-données -- \n" + str(self._metadonnees)
-            + "\n" + 18*"-" + "\n")
-        aff += ("\n-- Pochette -- \n" + str(self._pochette)
-                + "\n" + 14 * "-" + "\n")
+        aff += (
+            "\n-- Méta-données -- \n" + str(self._metadonnees) + "\n" + 18 * "-" + "\n"
+        )
+        aff += "\n-- Pochette -- \n" + str(self._pochette) + "\n" + 14 * "-" + "\n"
         return aff
 
     def __eq__(self, valeur: object) -> bool:
@@ -83,15 +90,15 @@ class PisteAudio:
         :return: True si les deux fichiers audio sont égaux, False sinon.
         """
         # Vérifie si l'objet est une instance de PochettePiste
-        if not(isinstance(valeur, PisteAudio)):
+        if not (isinstance(valeur, PisteAudio)):
             return False
 
         # Compare les métadonnées des deux objets
         return (
-            self._chemin_fichier == valeur._chemin_fichier and
-            self._taille == valeur._taille and
-            self._metadonnees == valeur._metadonnees and
-            self._pochette == valeur._pochette
+            self._chemin_fichier == valeur._chemin_fichier
+            and self._taille == valeur._taille
+            and self._metadonnees == valeur._metadonnees
+            and self._pochette == valeur._pochette
         )
 
     def _get_chemin_fichier(self) -> str:

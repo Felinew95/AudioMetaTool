@@ -26,11 +26,10 @@ Version : 1.1
 from pathlib import Path
 from mutagen import MutagenError
 
-from library.traitement.ExplorateurAudio import ExplorateurAudio
-from library.traitement.PisteAudioBuilder import PisteAudioBuilder
-
-from library.donnees.PlaylistAudioXSPF import PlaylistAudioXSPF
-from library.donnees.PisteAudio import PisteAudio
+from src.library.traitement.ExplorateurAudio import ExplorateurAudio
+from src.library.traitement.PisteAudioBuilder import PisteAudioBuilder
+from src.library.donnees.PlaylistAudioXSPF import PlaylistAudioXSPF
+from src.library.donnees.PisteAudio import PisteAudio
 
 
 class PlaylistAudioXSPFBuilder:

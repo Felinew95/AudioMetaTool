@@ -20,11 +20,13 @@ Version : 1.0
 
 # Importation des modules
 from pathlib import Path
-from library import PlaylistAudioXSPFBuilder
+from src.library.traitement import PlaylistAudioXSPFBuilder
 
 try:
     # Création de la playlist
-    playlist_builder = PlaylistAudioXSPFBuilder(Path("."), "Ma playlist", "./maplaylist.xspf")
+    playlist_builder = PlaylistAudioXSPFBuilder(
+        Path("."), "Ma playlist", "./maplaylist.xspf"
+    )
     playlist = playlist_builder.construire()
 
     # Affichage de la playlist

@@ -14,3 +14,15 @@ build/
 Thumbs.db
 *.xspf.tmp
 src/tests_auto/test_audio.flac
+
+# Musique de test (fichiers volumineux)
+musique_test/
+*.mp3
+*.flac
+!src/tests_auto/test_audio.mp3
+!src/tests_auto/test_audio_2.flac
+# Playlists générées (artefacts)
+*.xspf
+
+# Exception : garder les playlists de test si tu en as besoin un jour
+!src/tests_auto/test_*.xspf

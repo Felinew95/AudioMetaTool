@@ -31,11 +31,9 @@ from mutagen import File
 from mutagen.flac import FLAC
 from mutagen.mp3 import MP3
 
-from config import EXTENSIONS_AUTORISES
+from src.config import EXTENSIONS_AUTORISES
+from src.library.donnees import MetadonneesAudio, PochettePiste, PisteAudio
 
-from library import PisteAudio
-from library import MetadonneesAudio
-from library import PochettePiste
 
 class PisteAudioBuilder:
     """
@@ -66,7 +64,6 @@ class PisteAudioBuilder:
         """
         return self._fichier
 
-
     def _set_fichier(self, fichier: Path) -> None:
         """
         Modifie le fichier audio utilisé par le Builder.
@@ -94,7 +91,9 @@ class PisteAudioBuilder:
 
         # Vérification de l'extension
         if extension not in EXTENSIONS_AUTORISES:
-            raise ValueError(f"Extensions acceptées : {', '.join(EXTENSIONS_AUTORISES)}")
+            raise ValueError(
+                f"Extensions acceptées : {', '.join(EXTENSIONS_AUTORISES)}"
+            )
 
         # Chargement du nouveau fichier audio
         audio = File(str(fichier), easy=True)
@@ -143,7 +142,7 @@ class PisteAudioBuilder:
             num_piste: int = 1
 
         # Récupération la durée
-        duree: float|int = self._audio.info.length
+        duree: float | int = self._audio.info.length
 
         # Construire l'objet métadonnées
         metadonnees: MetadonneesAudio = MetadonneesAudio(
@@ -155,7 +154,7 @@ class PisteAudioBuilder:
             num_piste=num_piste,
             duree=duree,
             artiste_album=artiste_album,
-            compositeur=compositeur
+            compositeur=compositeur,
         )
 
         return metadonnees
@@ -193,7 +192,7 @@ class PisteAudioBuilder:
             return None
 
         # Créer l'objet pochette
-        return PochettePiste(donnees=image.data,format_pochette=image.mime)
+        return PochettePiste(donnees=image.data, format_pochette=image.mime)
 
     def construire(self) -> PisteAudio:
         """
@@ -208,12 +207,14 @@ class PisteAudioBuilder:
         metadonnees: MetadonneesAudio = self._extraire_metadonnees()
 
         # Récupération de la pochette
-        pochette: PochettePiste|None = self._extraire_pochette()
+        pochette: PochettePiste | None = self._extraire_pochette()
         if pochette is None:
-            pochette: PochettePiste = PochettePiste(donnees=b"", format_pochette="Inconnu")
+            pochette: PochettePiste = PochettePiste(
+                donnees=b"", format_pochette="Inconnu"
+            )
 
         # Extraction de la taille en Mo du fichier
-        taille: float|int = self._fichier.stat().st_size / 1_000_000
+        taille: float | int = self._fichier.stat().st_size / 1_000_000
 
         # Création de la piste musicale
         return PisteAudio(str(self._fichier), taille, metadonnees, pochette)

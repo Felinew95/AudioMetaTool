@@ -21,7 +21,8 @@ Version : 1.1
 
 # Importation des modules
 from pathlib import Path
-from config import EXTENSIONS_AUTORISES
+from src.config import EXTENSIONS_AUTORISES
+
 
 class ExplorateurAudio:
     """

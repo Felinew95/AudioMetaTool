@@ -19,8 +19,9 @@ Version : 1.0
 
 # Importation des modules
 from random import choice
-from config import FICHIERS_AUDIO
-from library import LecteurAudio
+from src.config import FICHIERS_AUDIO
+from src.library.traitement import LecteurAudio
+
 
 def test_lecteur_audio() -> None:
     """
@@ -37,6 +38,7 @@ def test_lecteur_audio() -> None:
     # Lecture du fichier audio
     lecteur = LecteurAudio(fichier=fichier_test)
     lecteur.start()
+
 
 # Lancement du programme
 if __name__ == "__main__":

@@ -24,7 +24,8 @@ Version : 1.1
 """
 
 # Importation des modules
-from library.donnees import PisteAudio
+from src.library.donnees.PisteAudio import PisteAudio
+
 
 class PlaylistAudioXSPF:
     """
@@ -54,7 +55,7 @@ class PlaylistAudioXSPF:
         self._nom: str = nom
         self._chemin_playlist: str = chemin_playlist
         self._nombre_pistes: int = 0
-        self._duree_totale: float|int = 0
+        self._duree_totale: float | int = 0
         self._pistes: list[PisteAudio] = []
 
     def __str__(self) -> str:

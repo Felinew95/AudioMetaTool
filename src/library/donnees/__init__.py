@@ -11,9 +11,9 @@ Expose les classes principales du modèle objet :
 Historique des versions :
     - 1.0 : Création du package et exportation des classes principales.
     - 1.1 : Ajout de l'importation de la classe LecteurAudio.
-
+    - 1.2 : Ajout de l'exportation explicite des classes et documentation du package.
 Auteurs : Nassim Berrandou, Alexandre Burin
-Version : 1.1
+Version : 1.2
 """
 
 # Importation des modules
