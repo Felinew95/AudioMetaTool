@@ -17,16 +17,17 @@ Historique des versions :
             de la boucle de lecture.
     - 1.2 : Ajout du threading pour permettre l'exécution
             de la lecture audio dans un thread séparé.
+    - 1.3 : Gestion de l'interruption par Ctrl+C (KeyboardInterrupt)
+            pour arrêter proprement la lecture
 
-Auteurs : Menaouer Ammari, Alexandre Burin
-Version : 1.2
+Auteurs : Menaouer Ammari, Alexandre Burin, Nassim BERRANDOU
+Version : 1.3
 """
+
+from threading import Thread
 
 # Importation des modules
 import pygame
-
-from threading import Thread
-from pygame.time import Clock
 from src.config import FREQUENCE_RAFRAICHISSEMENT
 
 
@@ -51,6 +52,7 @@ class LecteurAudio(Thread):
         """
         super().__init__()
         self._fichier: str = fichier
+        self._arrete: bool = False
 
         # Initialisation du mixer audio
         pygame.mixer.init()
@@ -70,19 +72,26 @@ class LecteurAudio(Thread):
 
         La méthode maintient le programme en attente tant que la lecture
         est en cours, avec un rafraîchissement limité à 10 itérations
-        par seconde.
+        par seconde. La lecture peut être interrompue par un Ctrl+C
+        ou par un appel à la méthode arreter().
 
         :return: Aucun retour.
         """
-        # Initialisation de la lecture
-        pygame.mixer.music.load(self._fichier)
-        pygame.mixer.music.play()
+        try:
+            # Initialisation de la lecture
+            pygame.mixer.music.load(self._fichier)
+            pygame.mixer.music.play()
 
-        # Lecture du fichier
-        horloge: Clock = Clock()
-        while pygame.mixer.music.get_busy():
-            # Rafraichissement de la lecture
-            horloge.tick(FREQUENCE_RAFRAICHISSEMENT)
+            # Lecture du fichier
+            horloge = pygame.time.Clock()
+            while pygame.mixer.music.get_busy() and not self._arrete:
+                # Rafraichissement de la lecture
+                horloge.tick(FREQUENCE_RAFRAICHISSEMENT)
+        except KeyboardInterrupt:
+            print("\nLecture interrompue.")
+        finally:
+            # Arrêt propre
+            pygame.mixer.music.stop()
 
     def pause(self) -> None:
         """
@@ -106,4 +115,5 @@ class LecteurAudio(Thread):
 
         :return: Aucun retour.
         """
+        self._arrete = True
         pygame.mixer.music.stop()

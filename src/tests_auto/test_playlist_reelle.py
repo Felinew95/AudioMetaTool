@@ -6,33 +6,28 @@ Description :
     Utilise le dossier musique_test/ s'il existe (démo locale),
     sinon utilise src/tests_auto/ (fichiers de test versionnés).
 
+    Le chemin du dossier est résolu via la fonction
+    trouver_dossier_musique() du module config.
+
+Historique des versions :
+    - 1.0 : Création du module avec fallback local.
+    - 1.1 : Ajout de la fonction _trouver_dossier_musique() locale.
+    - 1.2 : Utilisation de trouver_dossier_musique() du module config
+            pour centraliser la résolution des chemins
+
 Auteur : Nassim BERRANDOU
 Version : 1.2
 """
 
 from pathlib import Path
 
+from src.config import NOM_PLAYLIST_DEFAUT, trouver_dossier_musique
 from src.library.traitement import PlaylistAudioXSPFBuilder, SerialiseurXSPF
-
-
-def _trouver_dossier_musique() -> Path:
-    """
-    Trouve le dossier contenant les fichiers audio à utiliser.
-
-    Priorité :
-        1. musique_test/ (démo locale avec vrais morceaux)
-        2. src/tests_auto/ (fichiers de test versionnés)
-
-    :return: Chemin du dossier à explorer.
-    """
-    if Path("musique_test").is_dir():
-        return Path("musique_test")
-    return Path("src/tests_auto")
 
 
 def test_playlist_reelle() -> None:
     """Génère une playlist XSPF à partir des fichiers audio disponibles."""
-    dossier = _trouver_dossier_musique()
+    dossier = trouver_dossier_musique()
 
     print(f"Dossier utilisé : {dossier}")
 
@@ -41,7 +36,7 @@ def test_playlist_reelle() -> None:
         return
 
     builder = PlaylistAudioXSPFBuilder(
-        dossier, "Ma playlist réelle", "default_playlist.xspf"
+        dossier, "Ma playlist réelle", NOM_PLAYLIST_DEFAUT
     )
     playlist = builder.construire()
 
@@ -49,7 +44,7 @@ def test_playlist_reelle() -> None:
         print(f"Aucun fichier audio trouvé dans {dossier}/")
         return
 
-    chemin_sortie = Path("default_playlist.xspf")
+    chemin_sortie = Path(NOM_PLAYLIST_DEFAUT)
     SerialiseurXSPF().serialiser(playlist, chemin_sortie)
 
     print(f"\nPlaylist générée : {chemin_sortie}")
