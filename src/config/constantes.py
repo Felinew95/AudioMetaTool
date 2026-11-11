@@ -44,6 +44,9 @@ NOM_PLAYLIST_DEFAUT = "playlist/default_playlist.xspf"
 # Nom par défaut de la playlist générée pour le point d'avancement
 NOM_PLAYLIST_TEST_AVANCEMENT = "playlist/test_demo.xspf"
 
+# Fichier pour le test des classes
+FICHIER_TEST_CLASSES = "csv/tests_classes.csv"
+
 # Timeout (en secondes) pour l'arrêt du thread audio
 TIMEOUT_ARRET_AUDIO = 2
 

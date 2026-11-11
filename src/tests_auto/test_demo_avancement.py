@@ -127,6 +127,6 @@ def run_demo() -> None:
     print(f"RÉSULTAT : {reussis}/{len(tests)} tests réussis")
     print("=" * 55)
 
-
+# Lancement du programme
 if __name__ == "__main__":
     run_demo()

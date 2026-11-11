@@ -46,6 +46,6 @@ def test_extraction_metas() -> None:
     except Exception as e:
         print(e)
 
-
+# Lancement du programme
 if __name__ == "__main__":
     test_extraction_metas()

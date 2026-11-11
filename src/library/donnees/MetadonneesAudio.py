@@ -38,10 +38,18 @@ class MetadonneesAudio:
     Auteur : Alexandre BURIN
     Version : 1.2
     """
-    def __init__(self, titre: str, artiste: str, album: str,
-                 genre: str, annee: int, num_piste: int,
-                 duree: float|int, artiste_album: str,
-                 compositeur: str) -> None:
+    def __init__(
+            self,
+            titre: str,
+            artiste: str,
+            album: str,
+            genre: str,
+            annee: int,
+            num_piste: int,
+            duree: float|int,
+            artiste_album: str,
+            compositeur: str
+    ) -> None:
         """
         Initialise les métadonnées textuelles d'un fichier audio.
 
