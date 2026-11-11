@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Test</title>
+  <trackList>
+    <track>
+      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/musique_test/test_audio.mp3</location>
+      <title>Sade - Smooth Operator - Official - 1984</title>
+      <creator>Sade</creator>
+      <album>Diamond Life</album>
+      <duration>258011</duration>
+    </track>
+    <track>
+      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/musique_test/test_audio_2.flac</location>
+      <title>test_audio_2</title>
+      <creator>Inconnu</creator>
+      <album>Inconnu</album>
+      <duration>139366</duration>
+    </track>
+  </trackList>
+</playlist>
