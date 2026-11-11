@@ -15,13 +15,14 @@ Version : 1.0
 # Importation des modules
 import pandas as pd
 
-from config import FICHIER_TEST_CLASSES
+from src.config import FICHIER_TEST_CLASSES
 from src.library.donnees import (
     MetadonneesAudio,
     PisteAudio,
     PlaylistAudioXSPF,
     PochettePiste,
 )
+
 
 def creer_playlist_csv(fichier: str = FICHIER_TEST_CLASSES) -> PlaylistAudioXSPF:
     """

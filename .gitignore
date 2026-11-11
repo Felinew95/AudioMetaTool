@@ -26,3 +26,11 @@ musique_test/
 
 # Exception : garder les playlists de test si besoin
 !src/tests_auto/playlist/*.xspf
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Fichiers générés par pip
+*.egg-info/

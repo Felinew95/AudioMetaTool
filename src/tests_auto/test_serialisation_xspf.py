@@ -19,9 +19,10 @@ Version : 1.0
 # Importation des modules
 from pathlib import Path
 
-from config import FICHIER_TEST_CLASSES
+from src.config import FICHIER_TEST_CLASSES
 from src.library.traitement import SerialiseurXSPF
 from src.tests_auto.tests_classes import creer_playlist_csv
+
 
 def test_serialisation_xspf() -> None:
     """

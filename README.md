@@ -33,7 +33,7 @@ Application d'extraction et d'analyse des métadonnées audio aux formats
 ### ⏳ Prévues pour le rendu final
 
 - Interface en ligne de commande (CLI) avec `argparse`
-- Interface graphique (GUI) avec `tkinter`
+- Interface graphique (GUI) avec `pyQt`
 - Modification et sauvegarde des tags
 - Recherche d'informations via API web (paroles, infos album)
 - Téléchargement automatique des pochettes manquantes

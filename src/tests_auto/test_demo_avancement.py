@@ -24,7 +24,7 @@ Version : 1.1
 
 from pathlib import Path
 
-from config import NOM_PLAYLIST_TEST_AVANCEMENT
+from src.config import NOM_PLAYLIST_TEST_AVANCEMENT
 from src.library.traitement import (
     ExplorateurAudio,
     PisteAudioBuilder,
@@ -126,6 +126,7 @@ def run_demo() -> None:
     print("\n" + "=" * 55)
     print(f"RÉSULTAT : {reussis}/{len(tests)} tests réussis")
     print("=" * 55)
+
 
 # Lancement du programme
 if __name__ == "__main__":

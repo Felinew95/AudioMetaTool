@@ -30,10 +30,10 @@ from pathlib import Path
 EXTENSIONS_AUTORISES = (".mp3", ".flac")
 
 # Dossier de musique de test (à la racine, non versionné)
-DOSSIER_MUSIQUE_TEST = Path("musique_test").resolve() # Retourne le chemin absolu
+DOSSIER_MUSIQUE_TEST = Path("musique_test").resolve()  # Retourne le chemin absolu
 
 # Dossier de fallback (fichiers audio versionnés)
-DOSSIER_MUSIQUE_FALLBACK_TEST = Path(".").resolve() # Dossier tests_auto
+DOSSIER_MUSIQUE_FALLBACK_TEST = Path("src/tests_auto").resolve()  # Dossier tests_auto
 
 # Fréquence de rafraichissement du lecteur audio en Hz
 FREQUENCE_RAFRAICHISSEMENT = 10
@@ -49,6 +49,7 @@ FICHIER_TEST_CLASSES = "csv/tests_classes.csv"
 
 # Timeout (en secondes) pour l'arrêt du thread audio
 TIMEOUT_ARRET_AUDIO = 2
+
 
 def trouver_dossier_musique() -> Path:
     """

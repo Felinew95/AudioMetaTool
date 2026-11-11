@@ -135,10 +135,10 @@ de base pour personnaliser les questions lors de la soutenance.
 
 ## 5. Organisation du travail
 
-- **Réunions :** hebdomadaires
-- **Communication :** groupe de messagerie dédié + dépôt Git partagé
-- **Suivi :** diagramme de Gantt (déposé semaine 43)
-- **Versionnage :** Git (dépôt GitHub partagé)
+- **Réunions :** hebdomadaires (visioconférence)
+- **Communication :** groupe Discord dédié + dépôt GitHub partagé
+- **Suivi :** diagramme de Gantt mis à jour (déposé semaine 43, actualisé semaine 46)
+- **Versionnage :** Git (dépôt GitHub partagé, commits réguliers)
 
 ---
 
