@@ -22,7 +22,6 @@ Version : 1.1
 from src.config import trouver_dossier_musique
 from src.library.traitement import PlaylistAudioXSPFBuilder
 
-
 def test_extraction_metas() -> None:
     """
     Teste le fonctionnement de l'extraction des métadonnées et des pochettes

@@ -22,7 +22,6 @@ from pathlib import Path
 from src.library.traitement import SerialiseurXSPF
 from src.tests_auto.tests_classes import creer_playlist_csv
 
-
 def test_serialisation_xspf() -> None:
     """
     Teste la sérialisation d'une playlist au format XSPF.
@@ -34,10 +33,10 @@ def test_serialisation_xspf() -> None:
     :return: None. Aucune valeur n'est retournée.
     """
     # Création de la playlist de test à partir du CSV
-    playlist = creer_playlist_csv("src/tests_auto/tests_classes.csv")
+    playlist = creer_playlist_csv("tests_classes.csv")
 
     # Sérialisation vers un fichier XSPF
-    chemin_sortie = Path("src/tests_auto/test_playlist.xspf")
+    chemin_sortie = Path("playlist/test_playlist.xspf")
     serialiseur = SerialiseurXSPF()
     serialiseur.serialiser(playlist, chemin_sortie)
 

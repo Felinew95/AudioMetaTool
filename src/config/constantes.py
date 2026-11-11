@@ -16,32 +16,36 @@ Historique des versions :
             chemins
     - 1.2 : Suppression de la constante FICHIERS_AUDIO (devenue inutile suite à
         la sélection dynamique des fichiers dans test_lecteur_audio) et
-        ajout des constantes NOM_PLAYLIST_DEFAUT et TIMEOUT_ARRET_AUDIO
+        ajout des constantes NOM_PLAYLIST_DEFAUT, NOM_PLAYLIST_TEST_AVANCEMENT
+        et TIMEOUT_ARRET_AUDIO
 
 Auteurs : Alexandre BURIN, Nassim BERRANDOU
 Version : 1.2
 """
 
+# Importation des modules
 from pathlib import Path
 
 # Formats audio disponibles
 EXTENSIONS_AUTORISES = (".mp3", ".flac")
 
 # Dossier de musique de test (à la racine, non versionné)
-DOSSIER_MUSIQUE_TEST = Path("musique_test")
+DOSSIER_MUSIQUE_TEST = Path("musique_test").resolve() # Retourne le chemin absolu
 
 # Dossier de fallback (fichiers audio versionnés)
-DOSSIER_MUSIQUE_FALLBACK = Path("src/tests_auto")
+DOSSIER_MUSIQUE_FALLBACK_TEST = Path(".").resolve() # Dossier tests_auto
 
 # Fréquence de rafraichissement du lecteur audio en Hz
 FREQUENCE_RAFRAICHISSEMENT = 10
 
 # Nom par défaut de la playlist générée (imposé par le sujet)
-NOM_PLAYLIST_DEFAUT = "default_playlist.xspf"
+NOM_PLAYLIST_DEFAUT = "playlist/default_playlist.xspf"
+
+# Nom par défaut de la playlist générée pour le point d'avancement
+NOM_PLAYLIST_TEST_AVANCEMENT = "playlist/test_demo.xspf"
 
 # Timeout (en secondes) pour l'arrêt du thread audio
 TIMEOUT_ARRET_AUDIO = 2
-
 
 def trouver_dossier_musique() -> Path:
     """
@@ -55,4 +59,4 @@ def trouver_dossier_musique() -> Path:
     """
     if DOSSIER_MUSIQUE_TEST.is_dir():
         return DOSSIER_MUSIQUE_TEST
-    return DOSSIER_MUSIQUE_FALLBACK
+    return DOSSIER_MUSIQUE_FALLBACK_TEST

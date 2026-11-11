@@ -24,11 +24,10 @@ Auteurs : Menaouer Ammari, Alexandre Burin, Nassim BERRANDOU
 Version : 1.3
 """
 
-from threading import Thread
-
 # Importation des modules
 import pygame
 from src.config import FREQUENCE_RAFRAICHISSEMENT
+from threading import Thread
 
 
 class LecteurAudio(Thread):

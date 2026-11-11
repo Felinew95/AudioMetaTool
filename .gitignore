@@ -19,8 +19,8 @@ src/tests_auto/test_audio.flac
 musique_test/
 *.mp3
 *.flac
-!src/tests_auto/test_audio.mp3
-!src/tests_auto/test_audio_2.flac
+!src/tests_auto/musique_test/test_audio.mp3
+!src/tests_auto/musique_test/test_audio_2.flac
 # Playlists générées (artefacts)
 *.xspf
 

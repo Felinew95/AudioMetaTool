@@ -24,6 +24,7 @@ Version : 1.1
 
 from pathlib import Path
 
+from config import NOM_PLAYLIST_TEST_AVANCEMENT
 from src.library.traitement import (
     ExplorateurAudio,
     PisteAudioBuilder,
@@ -81,10 +82,10 @@ def test_playlist() -> None:
 def test_serialisation() -> None:
     """Vérifie la sérialisation XSPF et sa structure."""
     dossier = trouver_dossier_musique()
-    builder = PlaylistAudioXSPFBuilder(dossier, "Test", "test.xspf")
+    builder = PlaylistAudioXSPFBuilder(dossier, "Test", NOM_PLAYLIST_TEST_AVANCEMENT)
     playlist = builder.construire()
 
-    chemin = Path("src/tests_auto/test_demo.xspf")
+    chemin = Path("playlist/test_demo.xspf")
     SerialiseurXSPF().serialiser(playlist, chemin)
 
     assert chemin.is_file(), "Fichier XSPF non créé"
