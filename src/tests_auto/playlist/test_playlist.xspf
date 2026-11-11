@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Ma playlist</title>
+  <trackList>
+    <track>
+      <location>file:///C:/music/jazz/take_five.mp3</location>
+      <title>Take Five</title>
+      <creator>Dave Brubeck</creator>
+      <album>Time Out</album>
+      <duration>324000</duration>
+    </track>
+    <track>
+      <location>file:///C:/music/blues/thrill_is_gone.flac</location>
+      <title>The Thrill Is Gone</title>
+      <creator>B.B. King</creator>
+      <album>Completely Well</album>
+      <duration>324500</duration>
+    </track>
+    <track>
+      <location>file:///C:/music/rock/stairway_to_heaven.flac</location>
+      <title>Stairway to Heaven</title>
+      <creator>Led Zeppelin</creator>
+      <album>Led Zeppelin IV</album>
+      <duration>482000</duration>
+    </track>
+    <track>
+      <location>file:///C:/music/jazz/so_what.mp3</location>
+      <title>So What</title>
+      <creator>Miles Davis</creator>
+      <album>Kind of Blue</album>
+      <duration>562000</duration>
+    </track>
+    <track>
+      <location>file:///C:/music/classical/clair_de_lune.mp3</location>
+      <title>Clair de Lune</title>
+      <creator>Claude Debussy</creator>
+      <album>Suite Bergamasque</album>
+      <duration>300000</duration>
+    </track>
+  </trackList>
+</playlist>
