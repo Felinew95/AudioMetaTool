@@ -8,17 +8,17 @@ Application d'extraction et d'analyse des métadonnées audio aux formats
 
 ## Membres du projet
 
-| Membre | Rôle principal |
+| Membre | Rôles et responsabilités |
 |---|---|
-| **Nassim BERRANDOU** | Sérialisation XSPF, tests de bout en bout |
-| **Alexandre BURIN** | Couche données, configuration |
-| **Menaouer AMMARI** | Extraction des métadonnées, exploration, lecture audio |
+| **Nassim BERRANDOU** | Sérialisation des playlists au format XSPF ; création et gestion des playlists ; développement de l'interface graphique (GUI) ; écriture des tests |
+| **Alexandre BURIN** | Conception de la couche de données ; amélioration de l'architecture d'extraction des métadonnées grâce au patron *Builder* ; développement de l'interface en ligne de commande (CLI) ; lecture audio ; écriture des tests |
+| **Menaouer AMMARI** | Extraction des métadonnées ; exploration des dossiers ; développement de l'interface en ligne de commande (CLI) ; récupération de données complémentaires via des API externes ; recherche par métadonnée |
 
 ---
 
 ## Fonctionnalités
 
-### ✅ Implémentées
+### Implémentées
 
 - Extraction des métadonnées MP3 (ID3) et FLAC (Vorbis comments)
   via la bibliothèque `mutagen`
@@ -28,9 +28,9 @@ Application d'extraction et d'analyse des métadonnées audio aux formats
 - Sérialisation d'une playlist au format XSPF valide
   (validée sur https://validator.xspf.org/)
 - Lecture audio via `pygame` (avec threading)
-- Tests automatiques de bout en bout
+- Tests automatiques 
 
-### ⏳ Prévues pour le rendu final
+###  Prévues pour le rendu final
 
 - Interface en ligne de commande (CLI) avec `argparse`
 - Interface graphique (GUI) avec `pyQt`
@@ -148,8 +148,6 @@ Projet réalisé dans le cadre de la mineure « Python » de la L3 Informatique 
 ## Licence
 
 Projet académique — Université, 2026–2027.
-
-
 
 <img width="916" height="546" alt="logo_audiometatool" src="https://github.com/user-attachments/assets/8785fc71-e57a-495f-bcaf-9b6325e203c7" />
 
