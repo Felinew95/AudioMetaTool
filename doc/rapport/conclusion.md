@@ -14,7 +14,7 @@
   versionnés (`src/tests_auto/`) si `musique_test/` est absent.
 - **Lecture audio en thread** : gestion de `Ctrl+C` et arrêt contrôlé
   par la touche Entrée avec `pygame`.
-- **Tests automatisés** : création d'un test unifié de bout en bout
+- **Tests automatisés** : création d'un test unifié
   (`test_demo_avancement.py`) qui valide la chaîne complète
   exploration → extraction → playlist → sérialisation XSPF.
 
@@ -31,7 +31,7 @@
 
 ## 3. Items restants (rendu final)
 
-- Interface en ligne de commande (CLI) avec `argparse`
+- Interface en ligne de commande (CLI) 
 - Interface graphique (GUI) avec `pyQt`
 - Modification et sauvegarde des tags
 - Recherche d'informations via API web (paroles, infos album)

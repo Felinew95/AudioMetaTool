@@ -21,9 +21,3 @@ Historique des versions :
 Auteurs : Alexandre BURIN, Nassim BERRANDOU
 Version : 1.2
 """
-
-from .ExplorateurAudio import ExplorateurAudio
-from .PisteAudioBuilder import PisteAudioBuilder
-from .PlaylistAudioXSPFBuilder import PlaylistAudioXSPFBuilder
-from .LecteurAudio import LecteurAudio
-from .SerialiseurXSPF import SerialiseurXSPF

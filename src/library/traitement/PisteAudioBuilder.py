@@ -31,8 +31,10 @@ from mutagen import File
 from mutagen.flac import FLAC
 from mutagen.mp3 import MP3
 
+from library.donnees.MetadonneesAudio import MetadonneesAudio
+from library.donnees.PisteAudio import PisteAudio
+from library.donnees.PochettePiste import PochettePiste
 from src.config import EXTENSIONS_AUTORISES
-from src.library.donnees import MetadonneesAudio, PochettePiste, PisteAudio
 
 
 class PisteAudioBuilder:

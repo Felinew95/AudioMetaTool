@@ -27,6 +27,9 @@ Auteur : Alexandre BURIN
 Version : 1.2
 """
 
+# Importation des modules
+from library.utilitaires.outils import convertir_date
+
 class MetadonneesAudio:
     """
     Représente les métadonnées textuelles d'un fichier audio.
@@ -91,13 +94,15 @@ class MetadonneesAudio:
 
         :return: Métadonnées du fichier audio formatées sur plusieurs lignes.
         """
+        heures, minutes, secondes = convertir_date(duree=self._duree)
+
         aff = "Titre : " + self._titre
         aff += "\nArtiste : " + self._artiste
         aff += "\nAlbum : " + self._album
         aff += "\nGenre : " + self._genre
         aff += "\nAnnée : " + str(self._annee)
         aff += "\nNuméro de Piste : " + str(self._num_piste)
-        aff += "\nDurée : " + str(self._duree) + " sec"
+        aff += f"\nDurée : {int(heures)}h {int(minutes)}min {int(secondes)}s"
         aff += "\nArtiste de l'album : " + self._artiste_album
         aff += "\nCompositeur : " + self._compositeur
         return aff
@@ -123,7 +128,7 @@ class MetadonneesAudio:
             self._genre == valeur._genre and
             self._annee == valeur._annee and
             self._num_piste == valeur._num_piste and
-            self._duree == valeur._duree and
+            abs(self._duree - valeur._duree) < 1e9 and
             self._artiste_album == valeur._artiste_album and
             self._compositeur == valeur._compositeur
         )

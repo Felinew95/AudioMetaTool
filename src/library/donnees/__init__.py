@@ -15,9 +15,3 @@ Historique des versions :
 Auteurs : Nassim Berrandou, Alexandre Burin
 Version : 1.2
 """
-
-# Importation des modules
-from .MetadonneesAudio import MetadonneesAudio
-from .PisteAudio import PisteAudio
-from .PlaylistAudioXSPF import PlaylistAudioXSPF
-from .PochettePiste import PochettePiste

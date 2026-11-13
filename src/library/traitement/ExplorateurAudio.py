@@ -23,7 +23,6 @@ Version : 1.1
 from pathlib import Path
 from src.config import EXTENSIONS_AUTORISES
 
-
 class ExplorateurAudio:
     """
     Explore récursivement un dossier à la recherche de fichiers audio.
@@ -78,7 +77,7 @@ class ExplorateurAudio:
 
             # Exploration du sous-dossier
             if fichier.is_dir():
-                self._parcourir_dossier(fichier, fichiers_audio)
+                return self._parcourir_dossier(fichier, fichiers_audio)
             # Vérification du fichier
             else:
                 # Récupération de l'extension du fichier

@@ -72,7 +72,7 @@ class PisteAudio:
                  et la pochette du fichier audio.
         """
         aff = "\nChemin du fichier : " + self._chemin_fichier
-        aff += "\nTaille : " + str(self._taille) + " Mo\n"
+        aff += f"\nTaille : {self._taille:.2f} Mo\n"
         aff += (
             "\n-- Méta-données -- \n" + str(self._metadonnees) + "\n" + 18 * "-" + "\n"
         )

@@ -27,7 +27,8 @@ Version : 1.0
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from src.library.donnees import PlaylistAudioXSPF, PisteAudio
+from library.donnees.PisteAudio import PisteAudio
+from library.donnees.PlaylistAudioXSPF import PlaylistAudioXSPF
 
 
 class SerialiseurXSPF:

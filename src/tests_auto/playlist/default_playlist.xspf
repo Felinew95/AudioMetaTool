@@ -3,14 +3,14 @@
   <title>Ma playlist réelle</title>
   <trackList>
     <track>
-      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/test_audio.mp3</location>
+      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/musique_test/test_audio.mp3</location>
       <title>Sade - Smooth Operator - Official - 1984</title>
       <creator>Sade</creator>
       <album>Diamond Life</album>
       <duration>258011</duration>
     </track>
     <track>
-      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/test_audio_2.flac</location>
+      <location>file:///C:/Users/Felinew95/Documents/Algorithmique/python/AudioMetaTool/src/tests_auto/musique_test/test_audio_2.flac</location>
       <title>test_audio_2</title>
       <creator>Inconnu</creator>
       <album>Inconnu</album>

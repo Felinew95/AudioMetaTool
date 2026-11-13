@@ -27,13 +27,13 @@ Version : 1.4
 from pathlib import Path
 from random import choice
 
+from library.traitement.LecteurAudio import LecteurAudio
+
 from src.config import (
     EXTENSIONS_AUTORISES,
     TIMEOUT_ARRET_AUDIO,
     trouver_dossier_musique,
 )
-from src.library.traitement import LecteurAudio
-
 
 def _lister_fichiers_audio(dossier: Path) -> list[Path]:
     """
@@ -85,7 +85,6 @@ def test_lecteur_audio() -> None:
     lecteur.join(timeout=TIMEOUT_ARRET_AUDIO)
 
     print("Lecture arrêtée.")
-
 
 # Lancement du programme
 if __name__ == "__main__":

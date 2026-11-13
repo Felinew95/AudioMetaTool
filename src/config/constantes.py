@@ -29,11 +29,11 @@ from pathlib import Path
 # Formats audio disponibles
 EXTENSIONS_AUTORISES = (".mp3", ".flac")
 
-# Dossier de musique de test (à la racine, non versionné)
+# Dossier de musique de test à utiliser uniquement pour les tests (non versionné)
 DOSSIER_MUSIQUE_TEST = Path("musique_test").resolve()  # Retourne le chemin absolu
 
-# Dossier de fallback (fichiers audio versionnés)
-DOSSIER_MUSIQUE_FALLBACK_TEST = Path(".").resolve()  # Dossier tests_auto
+# Dossier de fallback à utiliser uniquement pour les tests (fichiers audio versionnés)
+DOSSIER_MUSIQUE_FALLBACK_TEST = Path(".").resolve()  # Dossier src/tests_auto
 
 # Fréquence de rafraichissement du lecteur audio en Hz
 FREQUENCE_RAFRAICHISSEMENT = 10

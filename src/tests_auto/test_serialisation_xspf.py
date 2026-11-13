@@ -18,10 +18,9 @@ Version : 1.0
 
 # Importation des modules
 from pathlib import Path
-
+from library.traitement.SerialiseurXSPF import SerialiseurXSPF
 from src.config import FICHIER_TEST_CLASSES
-from src.library.traitement import SerialiseurXSPF
-from src.tests_auto.tests_classes import creer_playlist_csv
+from tests_auto.tests_classes import creer_playlist_csv
 
 
 def test_serialisation_xspf() -> None:
@@ -50,7 +49,6 @@ def test_serialisation_xspf() -> None:
     # Affichage du contenu du fichier
     print("=== Contenu du fichier XSPF ===")
     print(chemin_sortie.read_text(encoding="utf-8"))
-
 
 # Lancement du programme
 if __name__ == "__main__":
