@@ -25,7 +25,7 @@ Version : 1.1
 
 # Importation des modules
 from src.library.donnees.PisteAudio import PisteAudio
-
+from library.utilitaires.outils import convertir_duree
 
 class PlaylistAudioXSPF:
     """
@@ -65,11 +65,14 @@ class PlaylistAudioXSPF:
         :return: Chaîne contenant les informations de la playlist
                  et la description de chacune de ses pistes.
         """
+        # Calcul de la durée totale
+        heures, minutes, secondes = convertir_duree(self._duree_totale)
+
         # Informations de la playlist
         aff: str = "==== " + self._nom + " ====\n\n"
         aff += "Chemin : " + self._chemin_playlist + "\n"
         aff += "Nombre de pistes : " + str(self._nombre_pistes) + "\n"
-        aff += "Durée totale : " + str(self._duree_totale) + " sec\n\n"
+        aff += f"Durée totale : {heures}h {minutes}min {secondes}sec\n\n"
 
         # Affichage des pistes
         for i in range(self._nombre_pistes):

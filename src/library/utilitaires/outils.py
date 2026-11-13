@@ -15,7 +15,7 @@ Auteur : Alexandre BURIN
 Version : 1.0
 """
 
-def convertir_date(duree: float|int) -> tuple[int, int, int]:
+def convertir_duree(duree: float | int) -> tuple[int, int, int]:
     """
     Convertit une durée exprimée en secondes en heures, minutes et secondes.
 

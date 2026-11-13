@@ -28,7 +28,7 @@ Version : 1.2
 """
 
 # Importation des modules
-from library.utilitaires.outils import convertir_date
+from library.utilitaires.outils import convertir_duree
 
 class MetadonneesAudio:
     """
@@ -94,7 +94,7 @@ class MetadonneesAudio:
 
         :return: Métadonnées du fichier audio formatées sur plusieurs lignes.
         """
-        heures, minutes, secondes = convertir_date(duree=self._duree)
+        heures, minutes, secondes = convertir_duree(duree=self._duree)
 
         aff = "Titre : " + self._titre
         aff += "\nArtiste : " + self._artiste

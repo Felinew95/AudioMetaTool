@@ -27,7 +27,6 @@ Version : 1.1
 from src.library.donnees.MetadonneesAudio import MetadonneesAudio
 from src.library.donnees.PochettePiste import PochettePiste
 
-
 class PisteAudio:
     """
     Représente un fichier audio et regroupe ses principales informations.
