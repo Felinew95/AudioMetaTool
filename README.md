@@ -70,8 +70,9 @@ pip install -r requirements.txt
     │   ├── library/
     │   │   ├── donnees/        # Modèle objet (métadonnées, pistes, playlist, pochette)
     │   │   └── traitement/     # Extraction, exploration, sérialisation, lecture
-    │   ├── cli/                # Interface console (à venir)
-    │   ├── gui/                # Interface graphique (à venir)
+    │   ├── cli/                # Interface console
+    │   │   └── cli.py
+    │   ├── gui/                # Interface graphique 
     │   └── tests_auto/         # Tests automatiques
     ├── .gitignore
     ├── README.md
