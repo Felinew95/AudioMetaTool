@@ -1,0 +1,9 @@
+Exemples :
+    -> Analyser un fichier audio :
+        python cli.py -f "musique.mp3"
+    -> Explorer un dossier :
+        python cli.py -d "C:/Musique"
+    -> Explorer un dossier et créer une playlist :
+        python cli.py -d "C:/Musique" -o "playlist.xspf"
+    -> Lire un fichier audio :
+        python cli.py -p "musique.mp3"

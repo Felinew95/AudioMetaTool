@@ -27,28 +27,43 @@ Version : 1.2
 from pathlib import Path
 
 # Formats audio disponibles
-EXTENSIONS_AUTORISES = (".mp3", ".flac")
+EXTENSIONS_AUTORISES: tuple[str, str] = (".mp3", ".flac")
 
 # Dossier de musique de test à utiliser uniquement pour les tests (non versionné)
-DOSSIER_MUSIQUE_TEST = Path("musique_test").resolve()  # Retourne le chemin absolu
+DOSSIER_MUSIQUE_TEST: Path = Path("musique_test").resolve()  # Retourne le chemin absolu
 
 # Dossier de fallback à utiliser uniquement pour les tests (fichiers audio versionnés)
-DOSSIER_MUSIQUE_FALLBACK_TEST = Path(".").resolve()  # Dossier src/tests_auto
+DOSSIER_MUSIQUE_FALLBACK_TEST: Path = Path(".").resolve()  # Dossier src/tests_auto
 
 # Fréquence de rafraichissement du lecteur audio en Hz
-FREQUENCE_RAFRAICHISSEMENT = 10
+FREQUENCE_RAFRAICHISSEMENT: int = 10
 
 # Nom par défaut de la playlist générée (imposé par le sujet)
-NOM_PLAYLIST_DEFAUT = "playlist/default_playlist.xspf"
+NOM_PLAYLIST_DEFAUT: str = "playlist/default_playlist.xspf"
+
+# Chemin par défaut de la playlist généré
+CHEMIN_PLAYLIST_DEFAUT: str = f"./default_playlist.xspf"
+
+# Dossier par défaut pour la lecture des fichiers pour la playlist
+DOSSIER_PLAYLIST_DEFAUT: Path = Path("./").resolve()
 
 # Nom par défaut de la playlist générée pour le point d'avancement
-NOM_PLAYLIST_TEST_AVANCEMENT = "playlist/test_demo.xspf"
+NOM_PLAYLIST_TEST_AVANCEMENT: str = "playlist/test_demo.xspf"
 
 # Fichier pour le test des classes
-FICHIER_TEST_CLASSES = "csv/tests_classes.csv"
+FICHIER_TEST_CLASSES: str = "csv/tests_classes.csv"
 
 # Timeout (en secondes) pour l'arrêt du thread audio
-TIMEOUT_ARRET_AUDIO = 2
+TIMEOUT_ARRET_AUDIO: int = 2
+
+# Timeout (en secondes) pour la lecture audio
+TIMEOUT_LECTURE_AUDIO: float|int = 0.2
+
+# Fichier pour la description de l'interface CLI
+FICHIER_DESCRIPTION_CLI: Path = Path("./rsc/description_cli.txt")
+
+# Fichier pour les exemples de commandes
+FICHIER_EXEMPLE_GUI: Path = Path("./rsc/exemples_cli.txt")
 
 def trouver_dossier_musique() -> Path:
     """

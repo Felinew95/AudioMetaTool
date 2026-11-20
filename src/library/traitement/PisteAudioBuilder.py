@@ -34,7 +34,7 @@ from mutagen.mp3 import MP3
 from library.donnees.MetadonneesAudio import MetadonneesAudio
 from library.donnees.PisteAudio import PisteAudio
 from library.donnees.PochettePiste import PochettePiste
-from src.config import EXTENSIONS_AUTORISES
+from config.constantes import EXTENSIONS_AUTORISES
 
 
 class PisteAudioBuilder:

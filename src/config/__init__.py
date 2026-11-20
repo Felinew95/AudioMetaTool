@@ -9,6 +9,3 @@ Historique des versions :
 Auteur : Alexandre BURIN
 Version : 1.0
 """
-
-# Importation des modules
-from .constantes import *

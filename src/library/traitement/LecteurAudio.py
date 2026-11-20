@@ -26,7 +26,8 @@ Version : 1.3
 
 # Importation des modules
 import pygame
-from src.config import FREQUENCE_RAFRAICHISSEMENT
+
+from config.constantes import FREQUENCE_RAFRAICHISSEMENT
 from threading import Thread
 
 
@@ -55,6 +56,22 @@ class LecteurAudio(Thread):
 
         # Initialisation du mixer audio
         pygame.mixer.init()
+
+    def _get_fichier(self) -> str:
+        """
+        Retourne le chemin du fichier.
+
+        :return: Chemin du fichier.
+        """
+        return self._fichier
+
+    def _set_fichier(self, fichier: str) -> None:
+        """
+        Modifie le chemin du fichier.
+
+        :param fichier: Nouveau chemin du fichier.
+        """
+        self._fichier = fichier
 
     def run(self) -> None:
         """
@@ -116,3 +133,6 @@ class LecteurAudio(Thread):
         """
         self._arrete = True
         pygame.mixer.music.stop()
+
+    # Définition des propriétés
+    fichier: property = property(_get_fichier, _set_fichier)

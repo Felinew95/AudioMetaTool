@@ -27,13 +27,9 @@ Version : 1.4
 from pathlib import Path
 from random import choice
 
+from config.constantes import trouver_dossier_musique, TIMEOUT_ARRET_AUDIO, EXTENSIONS_AUTORISES
 from library.traitement.LecteurAudio import LecteurAudio
 
-from src.config import (
-    EXTENSIONS_AUTORISES,
-    TIMEOUT_ARRET_AUDIO,
-    trouver_dossier_musique,
-)
 
 def _lister_fichiers_audio(dossier: Path) -> list[Path]:
     """

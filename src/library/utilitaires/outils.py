@@ -4,9 +4,6 @@ Module : outils.py
 Description : Ce module regroupe des fonctions utilitaires indépendantes
               de la logique métier de l'application AudioMetaTool.
 
-              Il fournit notamment des outils de conversion et de formatage
-              des durées exprimées en heures, minutes et secondes.
-
 Historique des versions :
     - 1.0 : Création du module et ajout de la fonction de conversion
             d'une durée en heures, minutes et secondes.
@@ -28,3 +25,13 @@ def convertir_duree(duree: float | int) -> tuple[int, int, int]:
     secondes: int = reste % 60
 
     return heures, minutes, secondes
+
+def lire_fichier(fichier: str) -> str:
+    """
+    Lit et retourne le contenu d'un fichier texte.
+
+    :param fichier: Chemin vers le fichier à lire.
+    :return: Contenu intégral du fichier.
+    """
+    with open(fichier, "r", encoding="utf-8") as fichier:
+        return fichier.read()

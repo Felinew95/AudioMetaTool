@@ -68,8 +68,12 @@ class PlaylistAudioXSPF:
         # Calcul de la durée totale
         heures, minutes, secondes = convertir_duree(self._duree_totale)
 
+        # Affichage nom playlist
+        nom_playlist: str = "==== " + self._nom + " ===="
+        taille_nom_playlist: int = len(nom_playlist)
+
         # Informations de la playlist
-        aff: str = "==== " + self._nom + " ====\n\n"
+        aff: str = nom_playlist + "\n\n"
         aff += "Chemin : " + self._chemin_playlist + "\n"
         aff += "Nombre de pistes : " + str(self._nombre_pistes) + "\n"
         aff += f"Durée totale : {heures}h {minutes}min {secondes}sec\n\n"
@@ -77,6 +81,7 @@ class PlaylistAudioXSPF:
         # Affichage des pistes
         for i in range(self._nombre_pistes):
             aff += f"== Piste {i+1} ==\n" + str(self._pistes[i]) + "\n"
+        aff += taille_nom_playlist * "=" + "\n"
 
         return aff
 

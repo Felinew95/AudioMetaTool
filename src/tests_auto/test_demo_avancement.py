@@ -22,18 +22,15 @@ Auteur : Nassim BERRANDOU
 Version : 1.1
 """
 
+# Importation des modules
 from pathlib import Path
+
+from config.constantes import trouver_dossier_musique, NOM_PLAYLIST_TEST_AVANCEMENT
 
 from library.traitement.ExplorateurAudio import ExplorateurAudio
 from library.traitement.PisteAudioBuilder import PisteAudioBuilder
 from library.traitement.PlaylistAudioXSPFBuilder import PlaylistAudioXSPFBuilder
 from library.traitement.SerialiseurXSPF import SerialiseurXSPF
-
-from src.config import NOM_PLAYLIST_TEST_AVANCEMENT
-from src.config import trouver_dossier_musique
-
-
-
 
 def test_exploration() -> None:
     """Vérifie que l'exploration trouve des fichiers audio."""

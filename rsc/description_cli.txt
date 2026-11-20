@@ -1,0 +1,4 @@
+AudioMetaTool
+
+Application d'extraction et d'analyse des métadonnées audio aux formats MP3 et FLAC,
+et de gestion de playlists au format XSPF (XML Shareable Playlist Format).

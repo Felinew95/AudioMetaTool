@@ -21,13 +21,9 @@ Version : 1.2
 
 from pathlib import Path
 
+from config.constantes import NOM_PLAYLIST_DEFAUT, trouver_dossier_musique
 from library.traitement.PlaylistAudioXSPFBuilder import PlaylistAudioXSPFBuilder
 from library.traitement.SerialiseurXSPF import SerialiseurXSPF
-
-from config import NOM_PLAYLIST_DEFAUT
-from config import trouver_dossier_musique
-
-
 
 def test_playlist_reelle() -> None:
     """Génère une playlist XSPF à partir des fichiers audio disponibles."""

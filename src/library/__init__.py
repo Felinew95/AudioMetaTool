@@ -5,8 +5,3 @@ Contient les classes et fonctions indépendantes de toute interface
 (console ou graphique) : représentation des données, extraction des
 métadonnées, exploration de dossiers, génération de playlists XSPF.
 """
-
-# Importation des modules
-from .donnees import *
-from .traitement import *
-from .utilitaires import *

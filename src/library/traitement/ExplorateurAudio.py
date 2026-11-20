@@ -21,7 +21,7 @@ Version : 1.1
 
 # Importation des modules
 from pathlib import Path
-from src.config import EXTENSIONS_AUTORISES
+from config.constantes import EXTENSIONS_AUTORISES
 
 class ExplorateurAudio:
     """
@@ -53,10 +53,14 @@ class ExplorateurAudio:
         :return: Liste des chemins des fichiers audio sous forme de chaînes.
         """
 
-        # Récupération des fichiers musicaux
-        return self._parcourir_dossier(self._dossier, fichiers_audio=[])
+        fichiers: list[str] = []
 
-    def _parcourir_dossier(self, dossier: Path, fichiers_audio: list[str]) -> list[str]:
+        # Récupération des fichiers musicaux
+        self._parcourir_dossier(self._dossier, fichiers)
+
+        return fichiers
+
+    def _parcourir_dossier(self, dossier: Path, fichiers_audio: list[str]) -> None:
         """
         Parcourt récursivement un dossier à la recherche de fichiers audio.
 
@@ -77,7 +81,7 @@ class ExplorateurAudio:
 
             # Exploration du sous-dossier
             if fichier.is_dir():
-                return self._parcourir_dossier(fichier, fichiers_audio)
+                self._parcourir_dossier(fichier, fichiers_audio)
             # Vérification du fichier
             else:
                 # Récupération de l'extension du fichier
@@ -86,5 +90,3 @@ class ExplorateurAudio:
                 # Vérification de l'extension
                 if extension in EXTENSIONS_AUTORISES:
                     fichiers_audio.append(str(fichier))
-
-        return fichiers_audio

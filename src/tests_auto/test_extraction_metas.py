@@ -19,7 +19,7 @@ Version : 1.1
 """
 
 # Importation des modules
-from src.config import trouver_dossier_musique
+from config.constantes import trouver_dossier_musique
 from library.traitement.PlaylistAudioXSPFBuilder import PlaylistAudioXSPFBuilder
 
 def test_extraction_metas() -> None:
